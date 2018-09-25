@@ -110,7 +110,9 @@ function traiteCours(cours){
 }
 
 function formate(e){
-    temps = e.start.toString().substr(0,21)
+    time = e.start
+    time = new Date(time.setHours(time.getHours()))
+    temps = time.toString().substr(0,21)
     return e.summary+"\n"+temps+"\n"+e.location
 }
 
